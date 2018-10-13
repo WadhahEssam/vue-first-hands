@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>vue-first-hands</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{ message }}
+      <br>
+      data is : {{ data }}
+    </div>
+    <hr>
+
+    <div id="app-2">
+      <!-- this message is going to be shown only when you hover on it 
+      the v-bind you are seeing is called a dircetive and it is one 
+      of the essintial ideas of vue js and the letter v indicates 
+      that they are spcial attributes provided by vue js -->
+      <span v-bind:title="message">
+        Hover your mouse over me for a few seconds to see my dynamically bound title!
+      </span>
+    </div>
+    <hr>
+
+    <!-- how easy it is to toggle the presnce of an element so depending 
+    on the value of the variable seen vue will decide when to shoe it you 
+    can even change the value from the console ( app3.seen = false ) -->
+    <div id="app-3">
+      <span v-if="seen">Noy you can seen me boy !</span>
+    </div>
+    <hr>
+
+    <!-- showing the v-for dircetive the can be used to display a list 
+    of items using the data from a given array, and amazingly you can
+    easly push item form console ( app4.todos.push({text:'Amber'}) )
+    also notice that the variable here is called todo however it is 
+    written todos in the js file to tell vue it is an array-->
+    <div id="app-4">
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+    </div>
+
+    <script src="/vue-first-hands/index.js"></script>
+  </body>
+</html>
