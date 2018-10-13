@@ -42,6 +42,39 @@
         </li>
       </ol>
     </div>
+    <hr>
+
+    <!-- the v-on directives are used to attach event listeners to
+    elements so the user can interact with them, the method that you 
+    you attach to the event listener should be declared in the methods 
+    attribue of the component -->
+    <div id="app-5">
+      <p>{{ message }}</p>
+      <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+    <hr>
+
+    <!-- the v-model dirctive that makes two-way binding between form
+    input and a state, which i thing is 100x better than react.js -->
+    <div id="app-6">
+      <p>{{ message }}</p>
+      <input v-model="message">
+    </div>
+    <hr>
+
+    <!-- trying out the vue components, since i declared the todo-item
+    component in the js file i can use it directly here like if it is 
+    an html element, we added the props to the component so it can have
+    the ability to accept values -->
+    <div id="app-7">
+        <ol>
+          <todo-item
+            v-for="item in groceryList"
+            v-bind:todo="item"
+            v-bind:key="item.id">
+          </todo-item>
+        </ol>
+      </div>
 
     <script src="/vue-first-hands/index.js"></script>
   </body>
